@@ -7,14 +7,16 @@ import Smurfs from './components/Smurfs';
 class App extends Component {
   constructor(props) {
     super(props);
+    // initial state = empty array
     this.state = {
       smurfs: [],
     };
   }
 
+
   updateVillage = newSmurfs => {
     this.setState({
-      smurfs:newSmurfs
+      smurfs: newSmurfs
     })
   }
 
