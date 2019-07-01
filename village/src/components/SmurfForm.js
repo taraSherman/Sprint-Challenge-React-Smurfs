@@ -11,14 +11,14 @@ class SmurfForm extends Component {
     };
   }
 
+  // POST new Smurf to database on the server; update state with new data, and return to "Home"; log error if promise rejected
   addSmurf = event => {
     event.preventDefault();
-    // add code to create the smurf using the api
     axios
       .post('http://localhost:3333/smurfs', this.state)
       .then(response => {
         this.props.updateVillage(response.data)
-        this.props.history.push
+        this.props.history.push('/')
       })
       .catch(err => {
         console.log('Error: ', err)
